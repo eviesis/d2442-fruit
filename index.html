@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nand Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    footer {
+      position: fixed;
+      bottom: 10px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>💬 Nand Chatbot</h1>
+  <p>Welcome! Click the chat icon at the bottom right to talk with Nand — your friendly assistant powered by IBM Watson.</p>
+
+  <footer>Powered by IBM Watson Assistant</footer>
+
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "9f7ff1e1-b9f2-4344-a0f6-f766063c5728", // Integration ID
+      region: "eu-de", // Region
+      serviceInstanceID: "b633ebce-045b-4a2e-a62f-76649266eece", // Service Instance ID
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function() {
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+        (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+        "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
